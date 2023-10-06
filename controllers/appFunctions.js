@@ -10,10 +10,13 @@ function processInput(rl, cart, laptop, headphones) {
 
         case "2":
           rl.question("Enter a product name to add: ", (productName) => {
+
+            productName = productName.toLowerCase();
+
             let product =
-              productName === "Laptop"
+              productName === "laptop"
                 ? laptop
-                : productName === "Headphones"
+                : productName === "headphones"
                 ? headphones
                 : null;
 
@@ -55,8 +58,10 @@ function processInput(rl, cart, laptop, headphones) {
             "Enter a product name to update quantity: ",
             (productName) => {
               rl.question("Enter new quantity: ", (newQuantity) => {
+
+                const product = productName.toLowerCase();
                 console.log(
-                  cart.updateQuantity(productName, parseInt(newQuantity))
+                  cart.updateQuantity(product, parseInt(newQuantity))
                 );
                 processInput(rl, cart, laptop, headphones);
               });

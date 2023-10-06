@@ -3,8 +3,8 @@ const Product = require("./classes/product");
 const ShoppingCart = require("./classes/shoppingCart");
 const { processInput } = require("./controllers/appFunctions");
 
-const laptop = new Product("Laptop", 1000, true);
-const headphones = new Product("Headphones", 50, true);
+const laptop = new Product("laptop", 1000, true);
+const headphones = new Product("headphones", 50, true);
 
 const cart = new ShoppingCart();
 const rl = readline.createInterface({
